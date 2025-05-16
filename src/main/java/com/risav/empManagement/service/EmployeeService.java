@@ -73,13 +73,11 @@ public class EmployeeService implements EmployeeServiceInterface {
   }
 
   @Override
-  public EmployeeDto deleteEmployee(int id) {
+  public void  deleteEmployee(int id) {
     EmployeeModel user = repository
         .findById(id).orElseThrow(() -> new ResourceNotFound("User Not Found: " + id));
 
     repository.deleteById(id);
-
-    return EmployeeMapper.employeeModelToDto(user);
 
   }
 

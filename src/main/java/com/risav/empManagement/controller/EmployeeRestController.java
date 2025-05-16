@@ -18,7 +18,7 @@ import com.risav.empManagement.dto.EmployeeDto;
 import com.risav.empManagement.service.EmployeeService;
 
 @RestController
-@RequestMapping("/emp")
+@RequestMapping("api/v1/emp")
 public class EmployeeRestController {
 
   @Autowired
@@ -34,7 +34,7 @@ public class EmployeeRestController {
    */
 
   @GetMapping("/{id}")
-  public EmployeeDto fromId(@PathVariable int id ) {
+  public EmployeeDto fromId(@PathVariable int id) {
 
     return service.getById(id);
 
@@ -53,9 +53,8 @@ public class EmployeeRestController {
     return new ResponseEntity<>(saved, HttpStatus.CREATED);
   }
 
-
   @PutMapping("/update/{id}")
-  public ResponseEntity<EmployeeDto> updateEmployeeRequest(@RequestBody EmployeeDto newdata, @PathVariable int id ) {
+  public ResponseEntity<EmployeeDto> updateEmployeeRequest(@RequestBody EmployeeDto newdata, @PathVariable int id) {
 
     EmployeeDto updatedData = service.updateEmployee(id, newdata);
 
@@ -64,11 +63,11 @@ public class EmployeeRestController {
   }
 
   @DeleteMapping("/delete/{id}")
-  public ResponseEntity<EmployeeDto> deleteEmployeeRequest(@PathVariable int id ) {
+  public ResponseEntity<String> deleteEmployeeRequest(@PathVariable int id) {
 
-    EmployeeDto updatedData = service.deleteEmployee(id );
+    service.deleteEmployee(id);
 
-    return new ResponseEntity<>(updatedData, HttpStatus.OK);
+    return  ResponseEntity.ok("USER DELETED SUCCESSFULLY");
 
   }
 

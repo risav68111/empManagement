@@ -15,6 +15,6 @@ public interface EmployeeServiceInterface {
 
   public EmployeeDto updateEmployee(int id, EmployeeDto employeeModel);
 
-  public EmployeeDto deleteEmployee(int id);
+  public void deleteEmployee(int id);
 
 }
