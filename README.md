@@ -1,5 +1,3 @@
-Here’s a cleaner and more professional version of your `README.md` section for the project:
-
 ---
 
 # 🧑‍💼 Employee Management REST API
@@ -80,5 +78,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Let me know if you want to add Swagger/OpenAPI docs, Docker support, or test instructions.
 
